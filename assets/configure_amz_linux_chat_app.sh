@@ -8,6 +8,7 @@ tar xvf Python-3.9.10.tgz
 cd Python-*/
 ./configure --enable-optimizations
 sudo make altinstall
+export PATH="/usr/local/bin:$PATH"
 
 amazon-linux-extras install -y nginx1
 yum install -y nginx ruby wget
