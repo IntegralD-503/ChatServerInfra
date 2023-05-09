@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g npm
+      - npm install
+  build:
+    commands:
+      - npm run build
+      - npm run test
+      - npm run cdk -- synth
+
+artifacts:
+  base-directory: cdk.out
+  files: 
+    - '**/*'
+
+reports:
+  jest_reports:
+    files:
+      - 'test-report.xml'
+    file-format: JUNITXML
+    base-directory: 'test-reports'
