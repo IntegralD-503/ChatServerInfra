@@ -82,6 +82,7 @@ export class ChatServerStack extends cdk.Stack {
         InstanceClass.T2,
         InstanceSize.MICRO,
       ),
+      keyName: 'chat_server',
       machineImage: ami,
       securityGroup: chatSg,
       role: chatServerRole,
