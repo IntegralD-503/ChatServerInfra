@@ -38,7 +38,7 @@ export class PipelineStack extends cdk.Stack {
       actions: [
         new GitHubSourceAction({
           owner: "IntegralD-503",
-          repo: "ChatServiceInfra",
+          repo: "ChatServerInfra",
           branch: "master",
           actionName: "ChatServiceInfra_Source",
           oauthToken: SecretValue.secretsManager("github-token"),
@@ -46,7 +46,7 @@ export class PipelineStack extends cdk.Stack {
         }),
         new GitHubSourceAction({
           owner: "IntegralD-503",
-          repo: "ChatService",
+          repo: "ChatServer",
           branch: "master",
           actionName: "ChatService_Source",
           oauthToken: SecretValue.secretsManager("github-token"),
