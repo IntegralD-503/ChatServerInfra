@@ -1,9 +1,16 @@
 #!/bin/bash -xe
 # Install OS packages
-yum update -y
-yum groupinstall -y "Development Tools"
+sudo yum -y groupinstall "Development Tools"
+sudo yum -y install openssl-devel bzip2-devel libffi-devel
+sudo yum -y install wget
+wget https://www.python.org/ftp/python/3.9.10/Python-3.9.10.tgz
+tar xvf Python-3.9.10.tgz
+cd Python-*/
+./configure --enable-optimizations
+sudo make altinstall
+
 amazon-linux-extras install -y nginx1
-yum install -y nginx python3 python3-pip python3-devel ruby wget
+yum install -y nginx ruby wget
 pip3 install pipenv wheel
 pip3 install torch
 pip3 install uvicorn fastapi transformers
@@ -13,3 +20,6 @@ cd /home/ec2-user
 wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
 chmod +x ./install
 ./install auto
+
+
+
