@@ -1,9 +1,11 @@
 #!/bin/bash -xe
 # Install OS packages
-yum update -y
-yum groupinstall -y "Development Tools"
-amazon-linux-extras install -y nginx1
-yum install -y nginx python3 python3-pip python3-devel ruby wget
+# yum update -y
+# yum groupinstall -y "Development Tools"
+# amazon-linux-extras install -y nginx1
+# yum install -y nginx python3 python3-pip python3-devel ruby wget
+apt update
+apt install -y nginx python3 python3-pip python3-devel ruby wget
 pip3 install pipenv wheel
 pip3 install uwsgi
 
