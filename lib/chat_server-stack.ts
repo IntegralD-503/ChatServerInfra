@@ -71,7 +71,7 @@ export class ChatServerStack extends cdk.Stack {
     // This is the Python Web server that we will be using
     // Get the latest AmazonLinux 2 AMI for the given region
     const ami = new AmazonLinuxImage({
-      generation: AmazonLinuxGeneration.AMAZON_LINUX_2,
+      generation: AmazonLinuxGeneration.AMAZON_LINUX_2022,
       cpuType: AmazonLinuxCpuType.X86_64,
     });
 
